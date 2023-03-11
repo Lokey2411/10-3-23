@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="themify-icons/themify-icons.css">
+    <link rel="shortcut icon" type = "image/jpg" href="img/goat-logo.avif">
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        .bg-default{
+            background: #8c0025;
+        }
+        a{
+            text-decoration: none;
+            /* color: none; */
+        }
+        ul li:hover{
+            color: #8c0025;
+        }
+        .navbar li a{
+            color: #fff;
+        }
+        .navbar li a:hover{
+            color: #fff000;
+        }
+        .bold{
+            font-weight: bold!important;
+
+        }
+        body{
+            min-height: 2500px;
+        }
+        .navbar{
+            /* display: flex;
+            justify-content: space-around; */
+            display: contents;
+        }
+        .navbar-top{
+            background-color: #8c0025;
+            width: 100%;
+            height: 40px;
+        }
+        .navbar-top ul{
+            display: flex;
+            height: 40px;
+            margin-left: 20px;
+            /* justify-content: space-between; */
+            color: #fff;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul{
+            display: flex;
+            /* justify-content: sb; */
+        }
+        .ti-home{
+            position: relative;
+            top: -32%;
+            margin-left: -7px;
+            /* transform: translateY(-50%); */
+        }
+        .col-xs-11 {
+            width: 91.66666667%;
+        }
+        .school-name{
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            z-index: 0;
+        }
+        .animation{
+            width: fit-content;
+        }
+        .animation:hover{
+            -webkit-mask-image: linear-gradient(-75deg,rgba(0,0,0,.6) 30%,#000 50%,rgba(0,0,0,.6) 70%);
+            -webkit-mask-size: 200%;
+            animation: slide 1s infinite 0.5s;
+        }
+        .school-name::after{
+            content:'';
+            top:0;
+	/* transform:translateX(100%); */
+            transform:translateX(100%);
+            width:fit-content;
+            /* height:220px; */
+            position: absolute;
+            z-index:1;
+            /* animation: slide 1s infinite 3s; */
+            
+        /* 
+        CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/ 
+        */
+             background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(128,186,232,0) 99%, rgba(125,185,232,0) 100%); /* FF3.6+ */
+            /* background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.8)), color-stop(99%,rgba(128,186,232,0)), color-stop(100%,rgba(125,185,232,0))); Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* IE10+ */
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 ); 
+        }
+        .col-half{
+            width: 50%;
+        }
+        @keyframes slide {
+            0% {transform:translateX(0);}
+            100% {transform:translateX(100% );}
+        }
+        .right-header input{
+            width: 375px;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            border-radius: 5px;
+        }
+        input{
+            border: none;
+        }
+        .right-header input::placeholder{
+            margin-left: 10px;
+        }
+        .right-header{
+            display: flex;
+            align-items: center;
+        }
+        .right-header div{
+            color: #fff000;
+            margin-left: 20px;
+            font-weight: bold;
+            font-family: Arial;
+        }
+        .right-header div::before{
+            margin-right: 10px;
+            font-family: 'themify';
+        }
+        .color-default{
+            color:#8c0025;
+        }
+        .first{
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+        
+        .navbar-mid{
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+        .navbar-mid img{
+            width: 100px;
+            height: 100px;
+        }
+        .navbar-mid ul{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .navbar-mid .left{
+            width: 25%;
+            position: relative;
+            left: 20px;
+            text-align: left;
+            color: #38406B;
+        }
+        .navbar-mid .right{
+            position: relative;
+            right: 20px;
+            width: calc(50%/6);
+        }
+        .navbar-mid ul li{
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .right:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .main-navbar{
+            position: sticky;
+            position: -webkit-sticky;
+            top:0;
+            z-index: 9;
+            /* top:0; */
+        }
+        .main-navbar ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60%;
+            margin-left: -8px;
+            padding-top: 16px;
+        }
+        .main-navbar ul li{
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12.5px;
+            width: fit-content;
+            padding-right: 20px;
+            padding-left: 20px;
+            /* text-align: right; */
+        }
+        .border-left{
+            border-left: 1px solid #fff;
+            padding: 8px;
+        }
+        .active,.main-navbar li:hover{
+            color: #fff000;
+            cursor: pointer;
+        }
+        #container img{
+            width: 100%;
+        }
+        #container li{
+            font-weight: bold;
+            font-size: 15px;
+        }
+        #container .background{
+            background: url(img/Messi-chua-cua\ barca.jpg) top center/cover no-repeat;
+            position: relative;
+            height:  600px;
+        }
+        #container .content{
+            color: #ff0000;
+            opacity: 0.8;
+            font-weight: bold;
+            background: rgba(255,255,255,.5);
+            width: 50%;
+            position: absolute;
+            top: 85%;
+            bottom: 0;
+            left: 25%;
+            font-size:30px;
+            text-align: center;
+            line-height: 300%;
+        }
+        .row{
+            width: 95%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .col-1{
+            width: 70%;
+            margin-right: 50px;
+        }
+        .head{
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .col-1 ul li{
+            padding-bottom: 50px;
+            padding-top: 8px;
+            cursor: pointer;
+        }
+        .row>div{
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            padding: 10px;
+        }
+        .title{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .border-bot{
+            border-bottom: 1px solid #ccc;
+        }
+        .slider{
+            width: 30%;
+        }
+        .slider img{
+            position:relative;
+            /* top:50%; */
+            left:50%;
+            transform:translateX(-50%);
+            margin-bottom: 20px;
+        }
+        .row-2 ul li{
+            /* display: block; */
+            width: calc(100%/3);
+            margin-right: 20px;
+            padding: 0;
+        }
+        .border-all{
+            border: 1px solid #000;
+        }
+        .row-2 .news{
+            width: fit-content;
+            padding: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            margin-top: 5px;
+        }
+        #news div{
+            font-weight: bold;
+        }
+        #enjoy button{
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 8px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+
+        }
+        #enjoy button:hover{
+            opacity: 0.6;
+        }
+        #enjoy ul li{
+            width: calc(60%/4);
+        }
+        #enjoy head{
+            width: 100%;
+        }
+        #enjoy .slider{
+            padding: 0;
+        }
+        #enjoy .slider>div, #achive .slider>div{
+            margin: 0;
+            padding: 0;
+            margin-top: -24px;
+        }
+        #achive>.col-1{
+            width: 33%;
+        }
+        #achive .slider{
+            padding: 0; 
+        }
+        #achive ul{
+            display: block;
+            width: 100%;
+        }
+        #achive ul li{
+            color: #8c0025;
+            /* display: flex; */
+            width: 100%;
+            margin-top: 10px;
+        }
+        .footer{
+            background-color: #8c0025;
+            color: #fff;
+            position: absolute;
+            bottom: -2200px;
+            left: 0;
+            right: 0;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .footer ul{
+            display: block;
+        }
+        .contact ul li:hover{
+            color: #fff;
+        }
+        .footer img{
+            width: 40%;
+            height: 140px;
+            margin: auto;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+        .footer .me{
+            font-weight: bold;
+            line-height: 300%;
+        }
+        .footer .left{
+            display: flex;
+        }
+        .footer .right{
+            line-height: 200%;
+            display: flex;
+            align-items: center;
+        }
+        .contact{
+            display: flex;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #fff;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .contact .right:hover{
+            opacity: 1;
+            color: #fff;
+            cursor: text;
+        }
+        .copyright{
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-top">
+            <ul>
+                
+                <li class="first">
+                    <div style="background-color: #fff;width: 20px;height: 100%; padding: 16px;"><i class="ti-home color-default"></i></div>
+                    <b class="col-xs-11 school-name"><div class="animation">Trường Đại học Hà Nội</div></b>
+                </li>
+                <li class="right-header">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <div class="ti-user">Đăng nhập</div>
+                </li>
+            </ul>
+    
+        </div>
+        <div class="navbar-mid">
+            <ul>
+                <li class="left" style="width: fit-content;"><img src="img/messi-logo.jpg" alt=""></li>
+                <li class="left">Khoa Tiếng Anh</li>
+                <li class="right color-default">Giới thiệu</li>
+                <li class="right color-default">Nhịp sống khoa</li>
+                <li class="right color-default">Bảng tin</li>
+                <li class="right color-default">Cổng thông tin đào tạo</li>
+                <li class="right color-default">Q&A</li>
+                <li class="right color-default">Liên hệ</li>
+            </ul>
+        </div>
+        <div class="main-navbar navbar-top">
+            <ul>
+                <li class="active"><a href="#">TRANG CHỦ</a></li>
+                <li class="border-left"><a href="#notice">thông báo</a></li>
+                <li class="border-left"><a href="#news">Tuyển sinh</a></li>
+                <li class="border-left"><a href="#news">Tin tức - Sự kiện</a></li>
+                <li class="border-left"><a href="#enjoy">Tận hưởng</a></li>
+                <li class="border-left"><a href="#achive">world cup</a></li>
+                <li class="border-left"><a href="#copyright">Lokey</a></li>
+                <li class="border-left">Nghiên cứu khoa học</li>
+                <li class="border-left">Cổng sinh viên</li>
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+        <div class="background">
+            <div class="content">
+                WELCOME TO OUR COMPANY
+            </div>
+        </div>
+        <div class="row" id="notice">
+            <div class="col-1">
+                <div class="head color-default"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Thông báo</div>
+                <ul style="display: block;">
+                    <li class="border-bot">Thời khóa biểu môn Ngữ pháp 1 và Văn hóa các nước nói tiếng Anh - Khóa VBA 21_1</li>
+                    <li class="border-bot">Kết quả phúc tra các môn HK1 năm học 2022-2023 khối chính quy</li>
+                    <li class="border-bot">Lịch thi kết thúc học phần học kỳ 2, năm học 2022 - 2023</li>
+                    <li class="border-bot">Lịch thi kết thúc học phần học kỳ 2, năm học 2022 - 2023</li>
+                </ul>
+            </div>
+            <div class="slider">
+                <div class="head color-default bold"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Sự kiện sắp diễn ra</div>
+                <img src="img/messi-logo.jpg" alt="" style="width: 200px;height: 200px;">
+                <div class="title bold">
+                    TÀI NĂNG LÃNH ĐẠO - CUỘC THI DÀNH CHO SINH VIÊN TOÀN MIỀN BẮC
+                </div>
+                <div class="address">
+                    Thời gian: <i class="ti-alarm-clock"></i> 17:08 29/08/20 - 17:08 18/09/20 <br>
+                    Địa điểm: Km 9 Nguyễn Trãi, P. Văn Quán, Hà Đông, Hà Nội, Việt Nam
+                </div>
+            </div>
+        </div>
+        <div class="row row-2" id="news">
+            <div class="col-1">
+                <div class="head color-default"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Bảng tin</div>
+                <ul style="display: flex;">
+                    <li class="border-bot">
+                        <img src="img/Messi-chua-cua barca.jpg" alt="">
+                        <div class="border-all news">bảng tin</div>
+                        Messi trở thành vị chúa của bóng đá thế giới còn ai đó thì chúng tôi không biết</li>
+                    <li class="border-bot">
+                        <img src="img/Messi-chua-cua barca.jpg" alt="">
+                        <div class="border-all news">bảng tin</div>
+                        Messi trở thành vị chúa của bóng đá thế giới còn ai đó thì chúng tôi không biết</li>
+                    <li class="border-bot">
+                        <img src="img/Messi-chua-cua barca.jpg" alt="">
+                        <div class="border-all news">bảng tin</div>
+
+                        Messi trở thành vị chúa của bóng đá thế giới còn ai đó thì chúng tôi không biết</li>
+                </ul>
+            </div>
+            <div class="slider" id="">
+                <div class="head color-default bold"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Thể thao</div>
+                <img src="img/Messi-chua-cua barca.jpg" alt="" style="width: 200px;height: 200px;">
+                <div class="title bold">
+                    MESSI LÊN NGÔI VƯƠNG THẾ GIÓI TUYÊN BỐ ÔNG ANH MẶC ÁO SỐ 7 TUỔI...
+                </div>
+                <div class="address">
+                    Thời gian: <i class="ti-alarm-clock"></i> 18/12/2022 <br>
+                    Địa điểm: Lusail, Doha, Qatar
+                </div>
+            </div>
+        </div>
+        <div class="row row-2" id="enjoy">
+            <div class="col-1">
+                <div class="head color-default"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Tận hưởng</div>
+                <img src="img/Messi-chua-cua barca.jpg" alt="">
+                <ul style="display: flex;justify-content: center;">
+                    <li class="">
+                        <button class="bg-default"> chung kết</button></li>
+                    <li class="">
+                        <button class="bg-default"> bán kết</button></li>
+                    <li class="">
+                        <button class="bg-default"> tứ kết</button></li>
+                    <li class="">
+                        <button class="bg-default"> 1/8</button></li>
+                </ul>
+            </div>
+            <div class="slider" id="">
+                <img src="img/messi-logo.jpg" alt="" style="width: 100%;min-height: 487px;position: relative;top: -0;left: 185px;">
+                <div class="head color-default bold" style="background-color: #8c0025;width:100%;color: #fff; text-align: center;line-height: 500%;">Lionel Messi</div>
+            </div>
+        </div>
+        <div class="row row-2" id="achive">
+            <div class="col-1">
+                <div class="head color-default"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Guôn cúp</div>
+                <img src="img/Messi-world-cup-2022.jpg" alt="">
+                <ul>
+                    <li class="ti-control-forward">Báo thủ Lautaro Martinez</li>
+                    <li class="ti-control-forward">Báo thủ Otamendi</li>
+                </ul>
+            </div>
+            <div class="col-1">
+                <div class="head color-default"><span style="background-color: #8c0025;margin-right: 20px;width: 80%;">&nbsp;</span>Guôn cúp</div>
+                <img src="img/Messi-world-cup-2022.jpg" alt="">
+                <ul>
+                    <li class="ti-control-forward">Người hùng Emiliano Martinez</li>
+                    <li class="ti-control-forward">Người hùng Lionel Scaloni</li>
+                </ul>
+            </div>
+            <div class="slider" id="">
+                <img src="img/Messi-sleep.webp" alt="" style="width: 100%;height: 300px;position: relative;top: -0;left: 185px;">
+                <div class="head color-default bold" style="background-color: #8c0025;width:100%;color: #fff; text-align: center;line-height: 500%;">Lối sống của một vị vua</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="copyright">
+        <div class="contact">
+            <div class="col-xs-11 left">
+                <img src="img/goat-logo.avif" alt="">
+            <div class="me">
+                <ul>
+                    <li>Lokey</li>
+                    <li>Hà Hải Việt</li>
+                    <li>FAF</li>
+                </ul>
+            </div>
+            </div>
+            <div class="col-half right">
+                <div>
+                    <ul>
+                        <li>Giới thiệu</li>
+                        <li>Về chúng tôi</li>
+                        <li>Lokey</li>
+                    </ul>
+                </div>
+                <div style="margin-left: 200px;">
+                    <ul>
+                        <li>Punchline tình</li>
+                        <li>Scheme</li>
+                        <li>Punchline Chửi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2023 - Lokey, Hà Hải Việt
+        </div>
+    </div>
+    <script>
+        var all = document.querySelectorAll('li');
+        var n = all.length;
+        for(let i=0;i<n;++i){
+            all[i].setAttribute('title',all[i].innerText);
+        }
+        var ul = new Array();
+        var hasChildElem = 0;
+    </script>
+</body>
+</html>
